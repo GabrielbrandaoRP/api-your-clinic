@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: yourclinic_db
+    restart: always
+    environment:
+      POSTGRES_USER: yourclinic
+      POSTGRES_PASSWORD: yourclinic24
+      POSTGRES_DB: yourclinic
+
+    ports:
+      - "5432:5432"
+    
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
